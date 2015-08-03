@@ -1,0 +1,9 @@
+---
+instances: 1
+memory: 512M
+applications:
+  - name: producer
+    path: target/producer-0.0.1-SNAPSHOT.jar
+    services:
+      - service-registry
+      - config-server
