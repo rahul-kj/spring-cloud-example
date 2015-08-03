@@ -2,6 +2,8 @@
 
 There are 2 modules here: **Producer** and **Consumer**
 
+Create the config-server service and use the repo `https://github.com/rahulkj/spring-cloud-example-config.git` for pulling down the configurations and `master` branch
+
 Producer registers itself with 
 - service registry
 - config-server

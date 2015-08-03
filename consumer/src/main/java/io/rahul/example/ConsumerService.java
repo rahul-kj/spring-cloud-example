@@ -19,8 +19,8 @@ public class ConsumerService {
 	@Autowired
 	DiscoveryClient discoveryClient;
 
-	@HystrixCommand(fallbackMethod = "getDefaultValue")
-	public Counter getValueFromProducer() {
+	@HystrixCommand(fallbackMethod = "getDefaultCounterValue")
+	public Counter getCounterValueFromProducer() {
 		InstanceInfo instanceInfo = discoveryClient.getNextServerFromEureka(
 		        "PRODUCER", false);
 		RestTemplate restTemplate = new RestTemplate();
@@ -31,7 +31,7 @@ public class ConsumerService {
 		return counter;
 	}
 
-	Counter getDefaultValue() {
+	Counter getDefaultCounterValue() {
 		Counter counter = new Counter();
 		counter.setValue(-1);
 		return counter;
