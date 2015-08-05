@@ -12,8 +12,8 @@ public class ProducerController {
 
 	AtomicInteger counter = new AtomicInteger();
 
-	@Value("${log.counter.message}")
-	String logCounterMessage;
+//	@Value("${log.counter.message}")
+	String logCounterMessage = "Default message, cannot use config server for this demo";
 
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public String getCounter() {

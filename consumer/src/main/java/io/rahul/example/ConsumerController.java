@@ -1,7 +1,6 @@
 package io.rahul.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumerController {
 
-	@Value("${log.consumer.message}")
-	String outputMessage;
+//	@Value("${log.consumer.message}")
+	String outputMessage = "Default message, cannot use config server for this demo";
 
 	@Autowired
 	ConsumerService consumerService;
